@@ -10,6 +10,9 @@ $if(fontfamily)$
 $else$
 \usepackage{lmodern}
 $endif$
+$if(left-ragged)$
+\usepackage[document]{ragged2e}
+$endif$
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
@@ -273,7 +276,6 @@ $endif$
 \tableofcontents
 }
 $endif$
-
 
 \begin{letter}{$for(address)$$address$$sep$\\$endfor$$if(subject)$\\ ~ \\$subject$$endif$}
 \opening{$opening$}
